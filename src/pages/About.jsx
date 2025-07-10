@@ -83,7 +83,7 @@ const About = () => {
                                         ? 'bg-slate-800/50 border border-slate-700/50'
                                         : 'bg-white/70 border border-purple-100/50'
                                         } backdrop-blur-sm`}>
-                                        <p className={`text-lg leading-relaxed text-center md:text-left ${darkMode
+                                        <p className={`text-lg leading-relaxed text-center  ${darkMode
                                             ? 'text-slate-300'
                                             : 'text-slate-600'
                                             }`}>
@@ -91,7 +91,7 @@ const About = () => {
                                             intuitive user experiences. From concept to deployment, I enjoy creating efficient, scalable
                                             solutions and bringing ideas to life through clean and maintainable code, I'm always eager to learn new technologies
                                             and tackle challenging problems that push the boundaries of
-                                            what's possible in software development..
+                                            what's possible in software development.
                                         </p>
                                     </div>
                                 </div>
