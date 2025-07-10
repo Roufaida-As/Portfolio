@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import FloatingParticles from '../components/FloatingParticles';
 import { useTheme } from "../../themeProvider";
 
-
 const Projects = () => {
     const { darkMode, toggleTheme } = useTheme();
     const [filter, setFilter] = useState('all');
@@ -192,15 +191,15 @@ const Projects = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                                {/* Project Links Overlay */}
-                                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                {/* Project Links Overlay - Visible on mobile, hover on desktop */}
+                                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                                     {/* Conditionally render live URL button */}
                                     {project.hasLiveUrl && (
                                         <a
                                             href={project.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="p-3 bg-white/90 rounded-full text-slate-700 hover:bg-white transition-colors duration-300"
+                                            className="p-3 bg-white/90 rounded-full text-slate-700 hover:bg-white transition-colors duration-300 shadow-lg"
                                             title="View Live Site"
                                         >
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,7 +215,7 @@ const Projects = () => {
                                             href={repo.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="p-3 bg-white/90 rounded-full text-slate-700 hover:bg-white transition-colors duration-300"
+                                            className="p-3 bg-white/90 rounded-full text-slate-700 hover:bg-white transition-colors duration-300 shadow-lg"
                                             title={`View ${repo.label} on GitHub`}
                                         >
                                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -224,6 +223,34 @@ const Projects = () => {
                                             </svg>
                                         </a>
                                     ))}
+                                </div>
+
+                                {/* Alternative: Action buttons below image on mobile */}
+                                <div className="md:hidden absolute bottom-4 left-4 right-4 flex gap-2 justify-center">
+                                    {project.hasLiveUrl && (
+                                        <a
+                                            href={project.liveUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium text-center transition-colors ${darkMode
+                                                ? 'bg-purple-600 text-white hover:bg-purple-700'
+                                                : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
+                                                }`}
+                                        >
+                                            Live Demo
+                                        </a>
+                                    )}
+                                    <a
+                                        href={project.githubRepos[0]?.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium text-center transition-colors ${darkMode
+                                            ? 'bg-slate-700 text-white hover:bg-slate-600'
+                                            : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                                            }`}
+                                    >
+                                        GitHub
+                                    </a>
                                 </div>
                             </div>
 
@@ -251,13 +278,40 @@ const Projects = () => {
                                     ))}
                                 </div>
 
-
+                                {/* Mobile action buttons (alternative approach) */}
+                                <div className="md:hidden flex gap-2 pt-4 border-t border-slate-200/20">
+                                    {project.hasLiveUrl && (
+                                        <a
+                                            href={project.liveUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors ${darkMode
+                                                ? 'bg-purple-600 text-white hover:bg-purple-700'
+                                                : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
+                                                }`}
+                                        >
+                                            View Live
+                                        </a>
+                                    )}
+                                    {project.githubRepos.map((repo, index) => (
+                                        <a
+                                            key={index}
+                                            href={repo.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors ${darkMode
+                                                ? 'bg-slate-700 text-white hover:bg-slate-600'
+                                                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                                                }`}
+                                        >
+                                            {repo.label}
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
-
-
             </div>
         </section>
     );
