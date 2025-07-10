@@ -245,7 +245,7 @@ const Home = () => {
                                     }`}>
                                     <div className="w-76 h-76 rounded-full bg-gradient-to-br from-white to-purple-100 overflow-hidden flex items-center justify-center">
                                         <img
-                                            src="src/assets/roufaida.jpg"
+                                            src="/src/assets/roufaida.jpg"
                                             alt="Roufaida"
                                             className="w-full h-full object-cover rounded-full"
                                         />
