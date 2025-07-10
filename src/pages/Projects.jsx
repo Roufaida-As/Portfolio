@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import FloatingParticles from '../components/FloatingParticles';
 import { useTheme } from "../../themeProvider";
 
-
 const Projects = () => {
     const { darkMode, toggleTheme } = useTheme();
     const [filter, setFilter] = useState('all');
+    const [touchedProject, setTouchedProject] = useState(null);
 
     const projects = [
         {
@@ -111,7 +111,7 @@ const Projects = () => {
             liveUrl: "",
             githubRepos: [
                 {
-                    url: "",
+                    url: "https://github.com/Roufaida-As/Portfolio",
                     label: "Main Repository"
                 }
             ],
@@ -128,6 +128,10 @@ const Projects = () => {
     const filteredProjects = filter === 'all'
         ? projects
         : projects.filter(project => project.category === filter);
+
+    const handleProjectTouch = (projectId) => {
+        setTouchedProject(touchedProject === projectId ? null : projectId);
+    };
 
     return (
         <section
@@ -189,11 +193,14 @@ const Projects = () => {
                                     src={project.image}
                                     alt={project.title}
                                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                                    onClick={() => handleProjectTouch(project.id)}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                                 {/* Project Links Overlay */}
-                                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className={`absolute inset-0 flex items-center justify-center gap-4 transition-opacity duration-300 ${
+                                    touchedProject === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                                }`}>
                                     {/* Conditionally render live URL button */}
                                     {project.hasLiveUrl && (
                                         <a
@@ -250,14 +257,10 @@ const Projects = () => {
                                         </span>
                                     ))}
                                 </div>
-
-
                             </div>
                         </div>
                     ))}
                 </div>
-
-
             </div>
         </section>
     );
