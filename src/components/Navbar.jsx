@@ -232,8 +232,8 @@ const Navbar = () => {
                 <div
                     className={
                         darkMode
-                            ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 backdrop-blur-lg bg-opacity-95 border border-slate-700/50 py-4 px-4 z-50 fixed top-20 mt-2 rounded-2xl shadow-2xl right-4 block w-48 animate-in slide-in-from-right-2 duration-300"
-                            : "bg-gradient-to-br from-white via-purple-50 to-rose-50 backdrop-blur-lg bg-opacity-95 border border-purple-200/50 py-4 px-4 z-50 fixed top-20 mt-2 rounded-2xl shadow-2xl right-4 block w-48 animate-in slide-in-from-right-2 duration-300"
+                            ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 backdrop-blur-lg bg-opacity-95 border border-purple py-4 px-4 z-50 fixed top-20 mt-2 rounded-2xl shadow-2xl right-4 block w-48 animate-in slide-in-from-right-2 duration-300"
+                            : "bg-gradient-to-br from-white via-purple-50 to-rose-50 backdrop-blur-lg bg-opacity-95 border border-purple py-4 px-4 z-50 fixed top-20 mt-2 rounded-2xl shadow-2xl right-4 block w-48 animate-in slide-in-from-right-2 duration-300"
                     }
                 >
                     <ul className="space-y-2">

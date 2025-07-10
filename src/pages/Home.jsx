@@ -59,7 +59,7 @@ const Home = () => {
 
     const downloadCV = () => {
         const link = document.createElement('a');
-        link.href = 'src/assets/Asbar-Roufaida CV.pdf';
+        link.href = 'assets/Asbar-Roufaida CV.pdf';
         link.download = 'Asbar-Roufaida CV.pdf'; 
         document.body.appendChild(link);
         link.click();

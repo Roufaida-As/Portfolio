@@ -164,7 +164,7 @@ const Projects = () => {
                                 ? 'bg-gradient-to-r from-purple-600 to-pink-600 bg-white text-white shadow-lg transform scale-105'
                                 : darkMode
                                     ? 'bg-slate-800/50 text-purple-600 border border-slate-700/50 hover:bg-slate-700/50'
-                                    : 'bg-white/70 text-slate-700 border bg-white border-purple-100/50 hover:bg-purple-50/70'
+                                    : 'bg-white/70 text-slate-700 border bg-white border-purple-100 hover:bg-purple-50/70'
                                 } backdrop-blur-sm hover:shadow-lg`}
                         >
                             {category.label}
