@@ -106,7 +106,7 @@ const Projects = () => {
             title: "Portfolio Website",
             description: "A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth animations, dark mode, and optimized performance.",
             image: "assets/portfolio.png",
-            technologies: ["React", "Tailwind CSS"],
+            technologies: ["React", "Tailwind CSS", "EmailJS"],
             category: "web",
             liveUrl: "",
             githubRepos: [
