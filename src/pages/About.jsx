@@ -28,9 +28,8 @@ const About = () => {
             ]
         },
         {
-            title: "Mobile Technologie",
+            title: "Mobile Technologies",
             skills: [
-
                 { name: "Flutter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" }
             ]
         },
@@ -77,12 +76,14 @@ const About = () => {
                     </h2>
                     <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 mb-12">
+
+                {/* About Description - Centered on mobile */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                     <div className={`p-6 rounded-2xl ${darkMode
                         ? 'bg-slate-800/50 border border-slate-700/50'
                         : 'bg-white/70 border border-purple-100/50'
                         } backdrop-blur-sm`}>
-                        <p className={`text-lg leading-relaxed ${darkMode
+                        <p className={`text-lg leading-relaxed text-center md:text-left ${darkMode
                             ? 'text-slate-300'
                             : 'text-slate-600'
                             }`}>
@@ -96,7 +97,7 @@ const About = () => {
                         ? 'bg-slate-800/50 border border-slate-700/50'
                         : 'bg-white/70 border border-purple-100/50'
                         } backdrop-blur-sm`}>
-                        <p className={`text-lg leading-relaxed ${darkMode
+                        <p className={`text-lg leading-relaxed text-center md:text-left ${darkMode
                             ? 'text-slate-300'
                             : 'text-slate-600'
                             }`}>
@@ -108,7 +109,7 @@ const About = () => {
                     </div>
                 </div>
 
-                {/* Skills Grid - Two categories per row */}
+                {/* Skills Grid - Centered on mobile */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {skillCategories.map((category, index) => (
                         <div
@@ -118,13 +119,13 @@ const About = () => {
                                 : 'bg-white/70 border border-purple-100/50'
                                 } backdrop-blur-sm`}
                         >
-                            <h3 className={`text-lg font-semibold mb-4 ${darkMode
+                            <h3 className={`text-lg font-semibold mb-4 text-center md:text-left ${darkMode
                                 ? 'text-white'
                                 : 'text-slate-800'
                                 }`}>
                                 {category.title}
                             </h3>
-                            <div className="flex flex-wrap gap-4">
+                            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                                 {category.skills.map((skill, skillIndex) => (
                                     <div
                                         key={skillIndex}
@@ -136,7 +137,7 @@ const About = () => {
                                         <img
                                             src={skill.logo}
                                             alt={skill.name}
-                                            className="w-5 h-5  hover:animate-none transition-all duration-300"
+                                            className="w-5 h-5 hover:animate-none transition-all duration-300"
                                             onError={(e) => {
                                                 e.target.style.display = 'none';
                                             }}
