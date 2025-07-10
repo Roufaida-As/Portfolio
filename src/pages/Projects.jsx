@@ -122,7 +122,7 @@ const Projects = () => {
     const categories = [
         { key: 'all', label: 'All Projects' },
         { key: 'web', label: 'Web Development' },
-        { key: 'mobile', label: 'Mobile Apps' }
+        { key: 'mobile', label: 'Mobile Development' }
     ];
 
     const filteredProjects = filter === 'all'
