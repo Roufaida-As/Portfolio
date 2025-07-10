@@ -35,12 +35,14 @@ const TypeWriter = ({ texts, speed = 100, deleteSpeed = 50, pauseTime = 2000 }) 
 };
 
 const Home = () => {
-    const { darkMode, toggleTheme } = useTheme(); 
+    const { darkMode, toggleTheme } = useTheme();
     const [isVisible, setIsVisible] = useState(false);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         setIsVisible(true);
+        setIsMobile(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent));
 
         const handleMouseMove = (e) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
@@ -49,6 +51,19 @@ const Home = () => {
         window.addEventListener("mousemove", handleMouseMove);
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
+    {
+        !isMobile && (
+            <div
+                className="fixed w-4 h-4 bg-gradient-to-r from-[#ec4899] to-[#f97316] rounded-full pointer-events-none z-50 mix-blend-difference"
+                style={{
+                    left: mousePosition.x - 8,
+                    top: mousePosition.y - 8,
+                    transform: 'translate(-50%, -50%)',
+                    transition: 'all 0.1s ease-out'
+                }}
+            />
+        )
+    }
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
@@ -60,7 +75,7 @@ const Home = () => {
     const downloadCV = () => {
         const link = document.createElement('a');
         link.href = 'assets/Asbar-Roufaida CV.pdf';
-        link.download = 'Asbar-Roufaida CV.pdf'; 
+        link.download = 'Asbar-Roufaida CV.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -156,32 +171,31 @@ const Home = () => {
 
                                 <button
                                     onClick={downloadCV}
-                                    className={`px-8 py-4 justify-center font-semibold rounded-full border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2 ${
-                                        darkMode
+                                    className={`px-8 py-4 justify-center font-semibold rounded-full border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2 ${darkMode
                                             ? 'border-purple-400 text-purple-600 hover:bg-purple-400 hover:text-white'
                                             : 'border-purple-600 bg-white text-purple-600  hover:bg-purple-600 hover:text-purple-600'
-                                    }`}
+                                        }`}
                                 >
-                                    <svg 
-                                        xmlns="http://www.w3.org/2000/svg" 
-                                        className="h-5 w-5" 
-                                        fill="none" 
-                                        viewBox="0 0 24 24" 
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
                                         stroke="currentColor"
                                     >
-                                        <path 
-                                            strokeLinecap="round" 
-                                            strokeLinejoin="round" 
-                                            strokeWidth={2} 
-                                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                         />
                                     </svg>
                                     Download CV
                                 </button>
                             </div>
-                            </div>
+                        </div>
 
-                            {/* Right side - Visual element */}
+                        {/* Right side - Visual element */}
                         <div className={`w-full lg:w-1/2 mt-12 lg:mt-0 flex justify-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                             }`}>
 
