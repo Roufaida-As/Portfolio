@@ -199,8 +199,8 @@ const Projects = () => {
 
                                 {/* Project Links Overlay */}
                                 <div className={`absolute inset-0 flex items-center justify-center gap-4 transition-opacity duration-300 ${
-                                    touchedProject === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                                }`}>
+                                    touchedProject === project.id ? 'opacity-100' : 'opacity-0'
+                                } group-hover:opacity-100`}>
                                     {/* Conditionally render live URL button */}
                                     {project.hasLiveUrl && (
                                         <a
