@@ -116,6 +116,22 @@ const Projects = () => {
                 }
             ],
             hasLiveUrl: false
+        },
+        {
+            id: 7,
+            title: "Linkly",
+            description: "Linkly is a full-stack URL shortening application that transforms long URLs into short and manageable links.",
+            image: "assets/linkly.png",
+            technologies: ["React", "Tailwind CSS", "Express", "MongoDB"],
+            category: "web",
+            liveUrl: "https://linky-url-shortener.vercel.app/",
+            githubRepos: [
+                {
+                    url: "https://github.com/Roufaida-As/Linkly-URL-Shortener",
+                    label: "Main Repository"
+                }
+            ],
+            hasLiveUrl: true
         }
     ];
 
