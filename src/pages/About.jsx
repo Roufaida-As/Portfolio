@@ -18,13 +18,16 @@ const About = () => {
         {
             title: "Web Technologies",
             skills: [
-                { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-                { name: "Angular.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
                 { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
                 { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+                { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+                { name: "Angular.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+                { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
                 { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
                 { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
                 { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+                { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+           
             ]
         },
         {
@@ -37,6 +40,7 @@ const About = () => {
             title: "Databases",
             skills: [
                 { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+                { name: "SQLite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
                 { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
                 { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" }
             ]
@@ -78,25 +82,25 @@ const About = () => {
                 </div>
 
                 {/* About Description - Centered on mobile */}
-                                <div className="grid grid-cols-1  gap-6 mb-12">
-                                    <div className={`p-6 rounded-2xl mx-auto md:mx-0 max-w-2xl md:max-w-none ${darkMode
-                                        ? 'bg-slate-800/50 border border-slate-700/50'
-                                        : 'bg-white/70 border border-purple-100/50'
-                                        } backdrop-blur-sm`}>
-                                        <p className={`text-lg leading-relaxed text-center  ${darkMode
-                                            ? 'text-slate-300'
-                                            : 'text-slate-600'
-                                            }`}>
-                                            I'm a passionate web and flutter developer with a love for creating
-                                            intuitive user experiences. From concept to deployment, I enjoy creating efficient, scalable
-                                            solutions and bringing ideas to life through clean and maintainable code, I'm always eager to learn new technologies
-                                            and tackle challenging problems that push the boundaries of
-                                            what's possible in software development.
-                                        </p>
-                                    </div>
-                                </div>
+                <div className="grid grid-cols-1  gap-6 mb-12">
+                    <div className={`p-6 rounded-2xl mx-auto md:mx-0 max-w-2xl md:max-w-none ${darkMode
+                        ? 'bg-slate-800/50 border border-slate-700/50'
+                        : 'bg-white/70 border border-purple-100/50'
+                        } backdrop-blur-sm`}>
+                        <p className={`text-lg leading-relaxed text-center  ${darkMode
+                            ? 'text-slate-300'
+                            : 'text-slate-600'
+                            }`}>
+                            I'm a passionate web and flutter developer with a love for creating
+                            intuitive user experiences. From concept to deployment, I enjoy creating efficient, scalable
+                            solutions and bringing ideas to life through clean and maintainable code, I'm always eager to learn new technologies
+                            and tackle challenging problems that push the boundaries of
+                            what's possible in software development.
+                        </p>
+                    </div>
+                </div>
 
-                                {/* Skills Grid - Centered on mobile */}
+                {/* Skills Grid - Centered on mobile */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {skillCategories.map((category, index) => (
                         <div
