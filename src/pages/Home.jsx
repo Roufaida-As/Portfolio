@@ -61,7 +61,7 @@ const Home = () => {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "assets/Asbar-Roufaida CV.pdf";
+    link.href = "assets/ASBAR_ROUFAIDA_CV.pdf";
     link.download = "Asbar-Roufaida CV.pdf";
     document.body.appendChild(link);
     link.click();
@@ -140,7 +140,7 @@ const Home = () => {
             marginBottom: "1.75rem",
             minHeight: "2rem",
           }}>
-            <TypeWriter texts={["Web Developer", "Flutter Developer", "CS Student at ESI"]} />
+            <TypeWriter texts={["Software Engineering Student","Web Developer", "Flutter Developer"]} />
           </p>
 
           {/* Bio */}
@@ -149,11 +149,14 @@ const Home = () => {
             lineHeight: 1.75,
             color: "var(--ink-muted)",
             marginBottom: "2.5rem",
-            maxWidth: "440px",
+            maxWidth: "480px",
           }}>
-            Third-year student at the Higher National School of Computer Science,
-            passionate about clean interfaces and well-crafted code. I build web
-            and mobile experiences that work and feel good.
+            Fourth-year student at ESI (Higher National School of Computer Science) in Algeria. I care about the full picture — 
+            from the first whiteboard sketch to architectural decisions to the final line of code. I'm drawn to the early 
+            stages of a project: defining the problem, shaping the structure, making the calls that everything else will 
+            be built on. That's why I naturally gravitate toward leadership in team projects — not to delegate, but 
+            to own the direction. I build full-stack web apps, distributed systems, and mobile experiences, with a habit
+             of thinking before typing.
           </p>
 
           {/* CTA buttons */}
@@ -212,7 +215,7 @@ const Home = () => {
           transform: visible ? "translateY(0)" : "translateY(24px)",
           transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
         }}>
-          <div style={{ position: "relative", width: "380px", height: "380px" }}>
+          <div style={{ position: "relative", width: "350px", height: "350px" }}>
             {/* Animated SVG ring — the signature element */}
             <svg
               viewBox="0 0 320 320"

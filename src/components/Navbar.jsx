@@ -45,6 +45,7 @@ const Navbar = () => {
     { name: "Home", route: "/" },
     { name: "About", route: "about" },
     { name: "Projects", route: "projects" },
+    { name: "Experience", route: "experience" },
     { name: "Contact", route: "contact" },
   ];
 
@@ -53,7 +54,7 @@ const Navbar = () => {
       setScrolled(window.scrollY > 20);
       const pos = window.scrollY + 120;
       if (pos < 300) { setActiveSection("/"); return; }
-      for (const s of ["about", "projects", "contact"]) {
+      for (const s of ["about", "projects", "experience", "contact"]) {
         const el = document.getElementById(s);
         if (el && pos >= el.offsetTop && pos < el.offsetTop + el.offsetHeight) {
           setActiveSection(s); return;

@@ -7,6 +7,55 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 7,
+      title: "SGFF — Forest Fire Detection",
+      description: "Distributed early-warning system for forest fires. Designed a hybrid multi-layer architecture (Layered, Event Bus, Master-Slave, P2P) and built a full prototype with simulated sensors feeding real-time data through Kafka to a live dashboard. Led architectural decisions covering availability, performance, and multi-layer security.",
+      image: "assets/sgff.png",
+      technologies: ["Python", "FastAPI", "Apache Kafka", "MQTT", "Docker", "WebSocket"],
+      category: "systems",
+      githubRepos: [{ url: "https://github.com/Roufaida-As/ALOG-Prototype", label: "GitHub" }],
+      hasLiveUrl: false,
+      hasDocumentationUrl:true,
+      documentationUrl:"https://drive.google.com/drive/folders/1xFcRaBbIEaQ3kV8diMSoTp3KjBSNsxK7?usp=drive_link",
+    },
+    {
+      id: 8,
+      title: "MathLang — Compiler",
+      description: "Full compiler for an invented math-oriented programming language, implementing all three compilation phases: lexical analysis (Flex), syntax analysis (Bison), and semantic analysis with type-checking. Generates intermediate quadruplet code and manages a complete symbol table with scopes and attributes.",
+      image: "assets/mathlang.png",
+      technologies: ["C", "Flex", "Bison", "Yacc", "OCaml"],
+      category: "systems",
+      githubRepos: [{ url: "https://github.com/Roufaida-As/MathLang", label: "GitHub" }],
+      hasLiveUrl: false,
+      badge: "Team Lead",
+       hasDocumentationUrl:true,
+      documentationUrl:"https://drive.google.com/drive/folders/1mhQ-VX0qwm2TFNsxXXJKl06hcWAbsvcV?usp=drive_link",
+    },
+    {
+      id: 9,
+      title: "AirIn — Airport Checkin Application",
+      description: "Full-stack airport checkin reservations system with real-time flight synchronization. Features JWT + Google OAuth authentication, boarding pass generation with QR codes, dynamic gate/seat reassignment, and an Android app with offline support. Led the team and worked in both sides the Django REST backend and the android app.",
+      image: "assets/airin.png",
+      technologies: ["Django", "Python", "Kotlin", "PostgreSQL", "JWT", "REST APIs","MVVM","Figma"],
+      category: "mobile",
+      githubRepos: [
+        { url: "https://github.com/TDM-PROJET/AirIn-backend", label: "Backend" },
+        { url: "https://github.com/TDM-PROJET/AirinIn-mobile", label: "Mobile" },
+      ],
+      hasLiveUrl: false,
+      badge: "Team Lead",
+    },
+    {
+      id: 10,
+      title: "Research Lab Showcase",
+      description: "Complete web platform for managing and showcasing university research labs. Handles users, projects, equipment reservations, publications, and events with role-based access (admin, researcher, visitor). Built on a clean MVC architecture with database backup and restore.",
+      image: "assets/researchlab.png",
+      technologies: ["PHP", "MySQL", "JavaScript", "CSS", "MVC"],
+      category: "web",
+      githubRepos: [{ url: "https://github.com/Roufaida-As/Research-Lab-Showcase-Platform", label: "GitHub" }],
+      hasLiveUrl: false,
+    },
+    {
       id: 1,
       title: "BagsShop",
       description: "E-commerce web app for women's bags. Built with React, Node.js, Express and MongoDB. Features product browsing, cart management, and a clean shopping experience.",
@@ -18,22 +67,9 @@ const Projects = () => {
       hasLiveUrl: true,
     },
     {
-      id: 2,
-      title: "DonaVita",
-      description: "Mobile donation platform built with Flutter and Firebase, connecting donors with organizations for a smoother, more transparent giving process.",
-      image: "assets/donavita.jpg",
-      technologies: ["Flutter", "Dart", "Firebase"],
-      category: "mobile",
-      githubRepos: [
-        { url: "https://github.com/Roufaida-As/DonaVita-Donors-side", label: "Donors" },
-        { url: "https://github.com/Roufaida-As/DonaVita-Organisations-side", label: "Orgs" },
-      ],
-      hasLiveUrl: false,
-    },
-    {
       id: 3,
       title: "Sabeel",
-      description: "Volunteer-event matching web app. Users find and join community opportunities, then coordinate via event-specific real-time chat groups.",
+      description: "Volunteer-event matching web app built during the Djezzy Code Fest hackathon with Micro Club. Users find and join community opportunities and coordinate via event-specific groups.",
       image: "assets/Sabeel.png",
       technologies: ["React", "TypeScript", "Express.js", "PostgreSQL", "Socket.io"],
       category: "web",
@@ -42,16 +78,7 @@ const Projects = () => {
         { url: "https://github.com/Roufaida-As/Sabeel-frontend", label: "Frontend" },
       ],
       hasLiveUrl: false,
-    },
-    {
-      id: 4,
-      title: "Merchandising AI App",
-      description: "Flutter app that uses AI-powered image analysis to help merchandisers track product placement and shelf distribution in retail environments.",
-      image: "assets/ramy.jpg",
-      technologies: ["Flutter", "Dart"],
-      category: "mobile",
-      githubRepos: [{ url: "https://github.com/Roufaida-As/AUP_SHE_CODES_MOBILE_APP", label: "GitHub" }],
-      hasLiveUrl: false,
+      badge: "Hackathon",
     },
     {
       id: 5,
@@ -77,12 +104,38 @@ const Projects = () => {
       githubRepos: [{ url: "https://github.com/Roufaida-As/Linkly-URL-Shortener", label: "GitHub" }],
       hasLiveUrl: true,
     },
+    {
+      id: 2,
+      title: "DonaVita",
+      description: "Mobile donation platform built with Flutter and Firebase, connecting donors with organizations for a smoother, more transparent giving process. Led a team of 6.",
+      image: "assets/donavita.jpg",
+      technologies: ["Flutter", "Dart", "Firebase"],
+      category: "mobile",
+      githubRepos: [
+        { url: "https://github.com/Roufaida-As/DonaVita-Donors-side", label: "Donors" },
+        { url: "https://github.com/Roufaida-As/DonaVita-Organisations-side", label: "Orgs" },
+      ],
+      hasLiveUrl: false,
+      badge: "Team Lead",
+    },
+    {
+      id: 4,
+      title: "Merchandising AI App",
+      description: "Flutter app that uses AI-powered image analysis to help merchandisers track product placement and shelf distribution in retail environments. Built during a hackathon.",
+      image: "assets/ramy.jpg",
+      technologies: ["Flutter", "Dart"],
+      category: "mobile",
+      githubRepos: [{ url: "https://github.com/Roufaida-As/AUP_SHE_CODES_MOBILE_APP", label: "GitHub" }],
+      hasLiveUrl: false,
+      badge: "Hackathon",
+    },
   ];
 
   const categories = [
     { key: "all", label: "All" },
     { key: "web", label: "Web" },
     { key: "mobile", label: "Mobile" },
+    { key: "systems", label: "Systems" },
   ];
 
   const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
@@ -194,24 +247,48 @@ const ProjectCard = ({ project }) => {
             transform: hovered ? "scale(1.04)" : "scale(1)",
             transition: "transform 0.4s ease",
           }}
+          onError={e => {
+            e.target.style.display = "none";
+            e.target.parentNode.style.background = "var(--bg-alt)";
+            e.target.parentNode.style.display = "flex";
+            e.target.parentNode.style.alignItems = "center";
+            e.target.parentNode.style.justifyContent = "center";
+            const label = document.createElement("span");
+            label.textContent = project.title[0];
+            label.style.cssText = "font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--border);";
+            e.target.parentNode.appendChild(label);
+          }}
         />
-        {/* Category badge */}
-        <span style={{
-          position: "absolute",
-          top: "12px",
-          right: "12px",
-          padding: "3px 10px",
-          background: "var(--bg)",
-          border: "1px solid var(--border)",
-          borderRadius: "2px",
-          fontSize: "0.6875rem",
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: "var(--ink-muted)",
-          fontWeight: 500,
-        }}>
-          {project.category}
-        </span>
+        {/* Badges */}
+        <div style={{ position: "absolute", top: "12px", right: "12px", display: "flex", gap: "6px" }}>
+          {project.badge && (
+            <span style={{
+              padding: "3px 10px",
+              background: "var(--accent)",
+              borderRadius: "2px",
+              fontSize: "0.6875rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#fff",
+              fontWeight: 500,
+            }}>
+              {project.badge}
+            </span>
+          )}
+          <span style={{
+            padding: "3px 10px",
+            background: "var(--bg)",
+            border: "1px solid var(--border)",
+            borderRadius: "2px",
+            fontSize: "0.6875rem",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "var(--ink-muted)",
+            fontWeight: 500,
+          }}>
+            {project.category}
+          </span>
+        </div>
       </div>
 
       {/* Content */}
@@ -277,6 +354,30 @@ const ProjectCard = ({ project }) => {
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               Live Demo
+            </a>
+          )}
+
+          {project.hasDocumentationUrl && (
+            <a
+              href={project.documentationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: "0.75rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                color: "var(--accent)",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.25rem",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={e => e.currentTarget.style.opacity = "0.7"}
+              onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Documentation
             </a>
           )}
           {project.githubRepos.map((repo, i) => (

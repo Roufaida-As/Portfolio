@@ -116,9 +116,9 @@ const About = () => {
             lineHeight: 1.8,
             color: "var(--ink-muted)",
           }}>
-            Currently studying at ESI (Higher National School of Computer Science) in Algeria,
-            I'm sharpening both my technical and creative thinking. I specialize in modern
-            web technologies and cross-platform mobile development with Flutter.
+            Currently in my fourth year at ESI (Higher National School of Computer Science) in Algeria,
+            with hands-on internship experience at Thynk Tech Dz and Foorweb. I specialize in modern
+            web technologies, distributed systems, and cross-platform mobile development with Flutter.
           </p>
         </div>
 
