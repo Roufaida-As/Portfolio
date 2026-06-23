@@ -1,32 +1,36 @@
-import { useState, useEffect } from "react";
-import Contact from "./pages/Contact";
+import { useEffect } from "react";
+import { ThemeProvider, useTheme } from "../themeProvider";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 import About from "./pages/About";
-import Home from './pages/Home';
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import { ThemeProvider } from "../themeProvider";
 
-function App() {
-  const [loading, setLoading] = useState(true)
+function AppInner() {
+  const { darkMode } = useTheme();
+
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000)
-  }, [])
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   return (
+    <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh" }}>
+      <Navbar />
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
+
+function App() {
+  return (
     <ThemeProvider>
-      <>
-        <div >
-          <Navbar />
-          {
-            <><Home /><About /> <Projects /> <Contact /><Footer /></>
-          }
-        </div>
-
-
-      </>
+      <AppInner />
     </ThemeProvider>
-
   );
 }
 

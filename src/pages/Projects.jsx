@@ -1,308 +1,312 @@
-import React, { useState, useEffect } from 'react';
-import FloatingParticles from '../components/FloatingParticles';
+import React, { useState } from "react";
 import { useTheme } from "../../themeProvider";
 
-
 const Projects = () => {
-    const { darkMode, toggleTheme } = useTheme();
-    const [filter, setFilter] = useState('all');
+  const { darkMode } = useTheme();
+  const [filter, setFilter] = useState("all");
 
-    const projects = [
-        {
-            id: 1,
-            title: "BagsShop",
-            description: "BagsShop is a modern e-commerce web application built using React for the frontend and a backend powered by Node.js, Express and MongoDB. The project allows users to browse, view, and purchase women's bags.",
-            image: "assets/bagShop.png",
-            technologies: ["React.js", "CSS", "Express.js", "MongoDB"],
-            category: "web",
-            liveUrl: "https://bags-shop.vercel.app/",
-            githubRepos: [
-                {
-                    url: "https://github.com/Roufaida-As/BagsShop",
-                    label: " Main Repository"
-                },
-            ],
-            hasLiveUrl: true
-        },
-        {
-            id: 2,
-            title: "DonaVita",
-            description: "DonaVita is an innovative mobile application built using Flutter and Firebase, Designed to facilitate and enhance the donation process between donators and organisations.",
-            image: "assets/donavita.jpg",
-            technologies: ["Flutter", "Dart", "Firebase"],
-            category: "mobile",
-            liveUrl: "https://play.google.com/store",
-            githubRepos: [
-                {
-                    url: "https://github.com/Roufaida-As/DonaVita-Donors-side",
-                    label: "Donors App"
-                },
-                {
-                    url: "https://github.com/Roufaida-As/DonaVita-Organisations-side",
-                    label: "Organizations App"
-                }
-            ],
-            hasLiveUrl: false
-        },
-        {
-            id: 3,
-            title: "Sabeel",
-            description: "Sabeel is a web application that connects volunteers with local community events. Users can search and filter opportunities by category, date, and location, then join event-specific chat groups for team coordination.",
-            image: "assets/Sabeel.png",
-            technologies: ["React", "CSS", "TypeScript", "Express.js", "Postgresql", "Socket.io",],
-            category: "web",
-            liveUrl: "",
-            githubRepos: [
-                {
-                    url: "https://github.com/Roufaida-As/Sabeel_backend",
-                    label: "Backend Repository"
-                },
-                {
-                    url: "https://github.com/Roufaida-As/Sabeel-frontend",
-                    label: "Frontend Repository"
-                }
-            ],
-            hasLiveUrl: false
-        },
-        {
-            id: 4,
-            title: "Merchandising AI App",
-            description: "This mobile application, developed using Flutter, is designed to optimize merchandising operations through AI-powered image analysis. Proposed by Ramy, the project aims to assist merchandisers and customers in tracking product placement and shelf distribution efficiently.",
-            image: "assets/ramy.jpg",
-            technologies: ["Dart", "Flutter"],
-            category: "mobile",
-            liveUrl: "",
-            githubRepos: [
-                {
-                    url: "https://github.com/Roufaida-As/AUP_SHE_CODES_MOBILE_APP",
-                    label: "Main Repository"
-                }
-            ],
-            hasLiveUrl: false
-        },
-        {
-            id: 5,
-            title: "Shifaa",
-            description: "A web-based application for managing electronic patient records. It allows healthcare professionals to store, retrieve, and update patient information securely. My role was based on frontend side.",
-            image: "assets/Shifaa.png",
-            technologies: ["Angular", "CSS", "TypeScript", "Django", "MySql"],
-            category: "web",
-            liveUrl: "",
-            githubRepos: [
-                {
-                    url: "https://github.com/Roufaida-As/Shifaa_Front",
-                    label: "Frontend Repository"
-                },
-                {
-                    url: " https://github.com/Roufaida-As/Shifaa_Backend",
-                    label: "Backend Repository"
-                }
+  const projects = [
+    {
+      id: 1,
+      title: "BagsShop",
+      description: "E-commerce web app for women's bags. Built with React, Node.js, Express and MongoDB. Features product browsing, cart management, and a clean shopping experience.",
+      image: "assets/bagShop.png",
+      technologies: ["React.js", "Express.js", "MongoDB"],
+      category: "web",
+      liveUrl: "https://bags-shop.vercel.app/",
+      githubRepos: [{ url: "https://github.com/Roufaida-As/BagsShop", label: "GitHub" }],
+      hasLiveUrl: true,
+    },
+    {
+      id: 2,
+      title: "DonaVita",
+      description: "Mobile donation platform built with Flutter and Firebase, connecting donors with organizations for a smoother, more transparent giving process.",
+      image: "assets/donavita.jpg",
+      technologies: ["Flutter", "Dart", "Firebase"],
+      category: "mobile",
+      githubRepos: [
+        { url: "https://github.com/Roufaida-As/DonaVita-Donors-side", label: "Donors" },
+        { url: "https://github.com/Roufaida-As/DonaVita-Organisations-side", label: "Orgs" },
+      ],
+      hasLiveUrl: false,
+    },
+    {
+      id: 3,
+      title: "Sabeel",
+      description: "Volunteer-event matching web app. Users find and join community opportunities, then coordinate via event-specific real-time chat groups.",
+      image: "assets/Sabeel.png",
+      technologies: ["React", "TypeScript", "Express.js", "PostgreSQL", "Socket.io"],
+      category: "web",
+      githubRepos: [
+        { url: "https://github.com/Roufaida-As/Sabeel_backend", label: "Backend" },
+        { url: "https://github.com/Roufaida-As/Sabeel-frontend", label: "Frontend" },
+      ],
+      hasLiveUrl: false,
+    },
+    {
+      id: 4,
+      title: "Merchandising AI App",
+      description: "Flutter app that uses AI-powered image analysis to help merchandisers track product placement and shelf distribution in retail environments.",
+      image: "assets/ramy.jpg",
+      technologies: ["Flutter", "Dart"],
+      category: "mobile",
+      githubRepos: [{ url: "https://github.com/Roufaida-As/AUP_SHE_CODES_MOBILE_APP", label: "GitHub" }],
+      hasLiveUrl: false,
+    },
+    {
+      id: 5,
+      title: "Shifaa",
+      description: "Electronic patient records system for healthcare professionals. I led the frontend using Angular and TypeScript, integrated with a Django + MySQL backend.",
+      image: "assets/Shifaa.png",
+      technologies: ["Angular", "TypeScript", "Django", "MySQL"],
+      category: "web",
+      githubRepos: [
+        { url: "https://github.com/Roufaida-As/Shifaa_Front", label: "Frontend" },
+        { url: "https://github.com/Roufaida-As/Shifaa_Backend", label: "Backend" },
+      ],
+      hasLiveUrl: false,
+    },
+    {
+      id: 6,
+      title: "Linkly",
+      description: "Full-stack URL shortener that transforms long links into clean, shareable short URLs. Built with React, Express, and MongoDB.",
+      image: "assets/linkly.png",
+      technologies: ["React", "Tailwind CSS", "Express", "MongoDB"],
+      category: "web",
+      liveUrl: "https://linky-url-shortener.vercel.app/",
+      githubRepos: [{ url: "https://github.com/Roufaida-As/Linkly-URL-Shortener", label: "GitHub" }],
+      hasLiveUrl: true,
+    },
+  ];
 
-            ],
-            hasLiveUrl: false
-        },
-        {
-            id: 6,
-            title: "Portfolio Website",
-            description: "A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth animations, dark mode, and optimized performance.",
-            image: "assets/portfolio.png",
-            technologies: ["React", "Tailwind CSS", "EmailJS"],
-            category: "web",
-            liveUrl: "",
-            githubRepos: [
-                {
-                    url: "https://github.com/Roufaida-As/Portfolio",
-                    label: "Main Repository"
-                }
-            ],
-            hasLiveUrl: false
-        },
-        {
-            id: 7,
-            title: "Linkly",
-            description: "Linkly is a full-stack URL shortening application that transforms long URLs into short and manageable links.",
-            image: "assets/linkly.png",
-            technologies: ["React", "Tailwind CSS", "Express", "MongoDB"],
-            category: "web",
-            liveUrl: "https://linky-url-shortener.vercel.app/",
-            githubRepos: [
-                {
-                    url: "https://github.com/Roufaida-As/Linkly-URL-Shortener",
-                    label: "Main Repository"
-                }
-            ],
-            hasLiveUrl: true
-        }
-    ];
+  const categories = [
+    { key: "all", label: "All" },
+    { key: "web", label: "Web" },
+    { key: "mobile", label: "Mobile" },
+  ];
 
-    const categories = [
-        { key: 'all', label: 'All Projects' },
-        { key: 'web', label: 'Web Development' },
-        { key: 'mobile', label: 'Mobile Development' }
-    ];
+  const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
 
-    const filteredProjects = filter === 'all'
-        ? projects
-        : projects.filter(project => project.category === filter);
+  return (
+    <section
+      id="projects"
+      style={{
+        background: "var(--bg)",
+        borderTop: "1px solid var(--border)",
+        padding: "6rem 2rem",
+      }}
+    >
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
-    return (
-        <section
-            id="projects"
-            className={`py-16 px-4 md:px-8 relative ${darkMode
-                ? 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'
-                : 'bg-gradient-to-br from-slate-50 via-white to-purple-50'
-                }`}
-        >
-            {/* Floating particles */}
-            <FloatingParticles darkMode={darkMode} />
-            <div className="max-w-6xl mx-auto relative z-10">
-                {/* Section Header */}
-                <div className="text-center mb-12">
-                    <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${darkMode
-                        ? 'text-white'
-                        : 'text-slate-800'
-                        }`}>
-                        My Projects
-                    </h2>
-                    <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-                    <p className={`mt-4 text-lg ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                        Here are some of my recent projects that showcase my skills and creativity
-                    </p>
-                </div>
+        <p style={{
+          fontSize: "0.75rem",
+          letterSpacing: "0.14em",
+          textTransform: "uppercase",
+          color: "var(--accent-warm)",
+          fontWeight: 500,
+          marginBottom: "1rem",
+        }}>
+          Work
+        </p>
 
-                {/* Filter Buttons */}
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {categories.map((category) => (
-                        <button
-                            key={category.key}
-                            onClick={() => setFilter(category.key)}
-                            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${filter === category.key
-                                ? 'bg-gradient-to-r from-purple-600 to-pink-600 bg-white text-white shadow-lg transform scale-105'
-                                : darkMode
-                                    ? 'bg-slate-800/50 text-purple-600 border border-slate-700/50 hover:bg-slate-700/50'
-                                    : 'bg-white/70 text-slate-700 border bg-white border-purple-100 hover:bg-purple-50/70'
-                                } backdrop-blur-sm hover:shadow-lg`}
-                        >
-                            {category.label}
-                        </button>
-                    ))}
-                </div>
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "clamp(2rem, 4vw, 3rem)",
+          fontWeight: 700,
+          color: "var(--ink)",
+          letterSpacing: "-0.02em",
+          marginBottom: "0.5rem",
+        }}>
+          Selected Projects
+        </h2>
 
-                {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredProjects.map((project) => (
-                        <div
-                            key={project.id}
-                            className={`group relative overflow-hidden rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${darkMode
-                                ? 'bg-slate-800/50 border border-slate-700/50'
-                                : 'bg-white/70 border border-purple-100/50'
-                                } backdrop-blur-sm`}
-                        >
+        <div style={{ width: "40px", height: "1px", background: "var(--accent)", marginBottom: "2.5rem" }} />
 
-                            {/* Project Image */}
-                            <div className="relative overflow-hidden">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Filter tabs */}
+        <div style={{ display: "flex", gap: "0", marginBottom: "3rem", borderBottom: "1px solid var(--border)" }}>
+          {categories.map(cat => (
+            <button
+              key={cat.key}
+              onClick={() => setFilter(cat.key)}
+              style={{
+                padding: "0.625rem 1.5rem",
+                background: "none",
+                border: "none",
+                borderBottom: filter === cat.key ? "2px solid var(--accent)" : "2px solid transparent",
+                marginBottom: "-1px",
+                fontSize: "0.8125rem",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                color: filter === cat.key ? "var(--accent)" : "var(--ink-muted)",
+                cursor: "pointer",
+                transition: "color 0.2s",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
 
-                                {/* Project Links Overlay */}
-                                <div className="hidden md:flex absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    {/* Conditionally render live URL button */}
-                                    {project.hasLiveUrl && (
-                                        <a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-3 bg-white/90 rounded-full text-slate-700 hover:bg-white transition-colors duration-300"
-                                            title="View Live Site"
-                                        >
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </a>
-                                    )}
+        {/* Grid */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+          gap: "1.5rem",
+        }}>
+          {filtered.map(project => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-                                    {/* GitHub repositories */}
-                                    {project.githubRepos.map((repo, index) => (
-                                        <a
-                                            key={index}
-                                            href={repo.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-3 bg-white/90 rounded-full text-slate-700 hover:bg-white transition-colors duration-300"
-                                            title={`View ${repo.label} on GitHub`}
-                                        >
-                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                            </svg>
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
+const ProjectCard = ({ project }) => {
+  const [hovered, setHovered] = useState(false);
 
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: "var(--card)",
+        border: `1px solid ${hovered ? "var(--accent)" : "var(--border)"}`,
+        borderRadius: "4px",
+        overflow: "hidden",
+        transition: "border-color 0.25s, box-shadow 0.25s",
+        boxShadow: hovered ? "0 8px 32px rgba(0,0,0,0.08)" : "none",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* Image */}
+      <div style={{ height: "200px", overflow: "hidden", position: "relative" }}>
+        <img
+          src={project.image}
+          alt={project.title}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            transform: hovered ? "scale(1.04)" : "scale(1)",
+            transition: "transform 0.4s ease",
+          }}
+        />
+        {/* Category badge */}
+        <span style={{
+          position: "absolute",
+          top: "12px",
+          right: "12px",
+          padding: "3px 10px",
+          background: "var(--bg)",
+          border: "1px solid var(--border)",
+          borderRadius: "2px",
+          fontSize: "0.6875rem",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          color: "var(--ink-muted)",
+          fontWeight: 500,
+        }}>
+          {project.category}
+        </span>
+      </div>
 
-                            {/* Project Info */}
-                            <div className="p-6">
-                                <h3 className={`text-xl font-semibold mb-2 ${darkMode ? 'text-white' : 'text-slate-800'}`}>
-                                    {project.title}
-                                </h3>
-                                <p className={`text-sm mb-4  ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                                    {project.description}
-                                </p>
+      {/* Content */}
+      <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", flex: 1 }}>
+        <h3 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "1.25rem",
+          fontWeight: 600,
+          color: "var(--ink)",
+          marginBottom: "0.625rem",
+          letterSpacing: "-0.01em",
+        }}>
+          {project.title}
+        </h3>
 
-                                {/* Technologies */}
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.technologies.map((tech, index) => (
-                                        <span
-                                            key={index}
-                                            className={`px-3 py-1 rounded-full text-xs font-medium ${darkMode
-                                                ? 'bg-slate-700 text-slate-300'
-                                                : 'bg-purple-50 text-purple-700'
-                                                }`}
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                                {/* Mobile: Always visible links below */}
-                                <div className="md:hidden flex gap-4 mt-4">
-                                    {project.hasLiveUrl && (
-                                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700">
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                            <span>Live Demo</span>
-                                        </a>
-                                    )}
-                                    {project.githubRepos.map((repo, index) => (
-                                        <a
-                                            key={index}
-                                            href={repo.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700"
-                                        >
-                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                            </svg>
-                                            <span>GitHub</span>
-                                        </a>
-                                    ))}
-                                </div>
+        <p style={{
+          fontSize: "0.875rem",
+          lineHeight: 1.7,
+          color: "var(--ink-muted)",
+          marginBottom: "1.25rem",
+          flex: 1,
+        }}>
+          {project.description}
+        </p>
 
+        {/* Tech tags */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem", marginBottom: "1.25rem" }}>
+          {project.technologies.map((tech, i) => (
+            <span key={i} style={{
+              padding: "2px 8px",
+              background: "var(--bg-alt)",
+              border: "1px solid var(--border)",
+              borderRadius: "2px",
+              fontSize: "0.6875rem",
+              color: "var(--ink-muted)",
+              letterSpacing: "0.04em",
+            }}>
+              {tech}
+            </span>
+          ))}
+        </div>
 
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-
-            </div>
-        </section>
-    );
+        {/* Links */}
+        <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
+          {project.hasLiveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: "0.75rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                color: "var(--accent)",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.25rem",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={e => e.currentTarget.style.opacity = "0.7"}
+              onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Live Demo
+            </a>
+          )}
+          {project.githubRepos.map((repo, i) => (
+            <a
+              key={i}
+              href={repo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: "0.75rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                color: "var(--ink-muted)",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.25rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = "var(--ink)"}
+              onMouseLeave={e => e.currentTarget.style.color = "var(--ink-muted)"}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              {repo.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Projects;
