@@ -10,12 +10,16 @@ const About = () => {
       skills: [
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
         { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
         { name: "Dart", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
         { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+        { name: "Kotlin", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+        { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+        { name: "C", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
       ],
     },
     {
-      title: "Web",
+      title: "Web & Frameworks",
       skills: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Angular", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
@@ -24,21 +28,55 @@ const About = () => {
         { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
         { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+        { name: "FastAPI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
       ],
     },
     {
       title: "Mobile",
       skills: [
         { name: "Flutter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+        { name: "Kotlin", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+        { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
       ],
     },
     {
       title: "Databases",
       skills: [
-        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
         { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
         { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
         { name: "SQLite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+      ],
+    },
+    {
+      title: "Architecture",
+      skills: [
+        { name: "MVC" },
+        { name: "MVVM" },
+        { name: "REST APIs" },
+        { name: "WebSocket" },
+        { name: "Microservices" },
+        { name: "Event-Driven" },
+        { name: "Layered" },
+        { name: "Master-Slave" },
+        { name: "P2P" },
+      ],
+    },
+    {
+      title: "DevOps & Infra",
+      skills: [
+        { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+        { name: "Apache Kafka", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" },
+        { name: "MQTT" },
+      ],
+    },
+    {
+      title: "Compilation",
+      skills: [
+        { name: "Flex" },
+        { name: "Bison" },
+        { name: "Yacc" },
+        { name: "OCaml", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ocaml/ocaml-original.svg" },
       ],
     },
     {
@@ -46,7 +84,7 @@ const About = () => {
       skills: [
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
         { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-        { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+        { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
         { name: "Postman", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
       ],
     },
@@ -93,34 +131,7 @@ const About = () => {
           marginBottom: "3rem",
         }} />
 
-        {/* Bio */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "4rem",
-          marginBottom: "4rem",
-        }}
-        className="about-bio-grid"
-        >
-          <p style={{
-            fontSize: "1rem",
-            lineHeight: 1.8,
-            color: "var(--ink-muted)",
-          }}>
-            I'm a passionate web and Flutter developer who cares about the full picture —
-            from clear architecture to pixel-level details. I enjoy translating ideas into
-            efficient, maintainable code and am always curious about the next problem to solve.
-          </p>
-          <p style={{
-            fontSize: "1rem",
-            lineHeight: 1.8,
-            color: "var(--ink-muted)",
-          }}>
-            Currently in my fourth year at ESI (Higher National School of Computer Science) in Algeria,
-            with hands-on internship experience at Thynk Tech Dz and Foorweb. I specialize in modern
-            web technologies, distributed systems, and cross-platform mobile development with Flutter.
-          </p>
-        </div>
+        
 
         {/* Skills */}
         <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
@@ -158,12 +169,14 @@ const About = () => {
                     onMouseEnter={e => e.currentTarget.style.borderColor = "var(--accent)"}
                     onMouseLeave={e => e.currentTarget.style.borderColor = "var(--border)"}
                   >
-                    <img
-                      src={skill.logo}
-                      alt={skill.name}
-                      style={{ width: "16px", height: "16px" }}
-                      onError={e => { e.target.style.display = "none"; }}
-                    />
+                    {skill.logo && (
+                      <img
+                        src={skill.logo}
+                        alt={skill.name}
+                        style={{ width: "16px", height: "16px", flexShrink: 0 }}
+                        onError={e => { e.target.style.display = "none"; }}
+                      />
+                    )}
                     {skill.name}
                   </div>
                 ))}
